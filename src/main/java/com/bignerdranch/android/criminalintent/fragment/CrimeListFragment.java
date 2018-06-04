@@ -1,6 +1,7 @@
 package com.bignerdranch.android.criminalintent.fragment;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
@@ -11,6 +12,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bignerdranch.android.criminalintent.CrimeActivity;
 import com.bignerdranch.android.criminalintent.R;
 import com.bignerdranch.android.criminalintent.bean.Crime;
 import com.bignerdranch.android.criminalintent.data.CrimeLab;
@@ -67,7 +69,9 @@ public class CrimeListFragment extends Fragment {
 
         @Override
         public void onClick(View view) {
-            Toast.makeText(getActivity(), mCrime.getTitle() + " clicked!", Toast.LENGTH_SHORT).show();
+            //Toast.makeText(getActivity(), mCrime.getTitle() + " clicked!", Toast.LENGTH_SHORT).show();
+            Intent intent = CrimeActivity.newIntent(getActivity(), mCrime.getId());
+            startActivity(intent);
         }
     }
 
