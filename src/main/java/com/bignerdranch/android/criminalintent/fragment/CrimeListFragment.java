@@ -62,6 +62,7 @@ public class CrimeListFragment extends Fragment {
     @Override
     public void onResume() {
         super.onResume();
+        //修改完数据后，更新数据库，并更新页面
         updateUI();
     }
 
@@ -125,6 +126,8 @@ public class CrimeListFragment extends Fragment {
             mAdapter = new CrimeAdapter(crimes);
             mCrimeRecyclerView.setAdapter(mAdapter);
         } else {
+            //更新数据
+            mAdapter.setCrimes(crimes);
             mAdapter.notifyDataSetChanged();
         }
     }
@@ -187,6 +190,10 @@ public class CrimeListFragment extends Fragment {
         @Override
         public int getItemCount() {
             return mCrimes.size();
+        }
+
+        public void setCrimes(List<Crime> crimes) {
+            mCrimes = crimes;
         }
     }
 }

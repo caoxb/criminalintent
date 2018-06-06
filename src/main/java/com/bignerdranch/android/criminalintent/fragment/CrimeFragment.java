@@ -24,6 +24,9 @@ import com.bignerdranch.android.criminalintent.data.CrimeLab;
 import java.util.Date;
 import java.util.UUID;
 
+/**
+ * 修改犯罪数据页面
+ */
 public class CrimeFragment extends Fragment {
     private static final String ARG_CRIME_ID = "crime_id";
     private static final String DIALOG_DATE = "DialogDate";
@@ -102,6 +105,13 @@ public class CrimeFragment extends Fragment {
             mCrime.setSolved(isChecked);
         });
         return v;
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        //修改页面后，退出界面时，保存修改的数据到数据库
+        CrimeLab.get(getActivity()).updateCrime(mCrime);
     }
 
     @Override
