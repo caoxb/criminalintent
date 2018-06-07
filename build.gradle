@@ -7,13 +7,12 @@ android {
 
     defaultConfig {
         applicationId "com.bignerdranch.android.criminalintent"
-        minSdkVersion depend_android["minSdkVersion"]
+        minSdkVersion 19
         targetSdkVersion depend_android["targetSdkVersion"]
         versionCode 1
         versionName "1.0"
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-
     }
 
     buildTypes {

@@ -56,4 +56,9 @@ public class Crime {
     public void setSuspect(String suspect) {
         mSuspect = suspect;
     }
+
+    //图片没有放入数据库
+    public String getPhotoFilename() {
+        return "IMG_" + getId().toString() + ".jpg";
+    }
 }

@@ -12,6 +12,7 @@ import com.bignerdranch.android.criminalintent.db.CrimeDbSchema;
 
 import static com.bignerdranch.android.criminalintent.db.CrimeDbSchema.CrimeTable.Cols.*;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
@@ -87,6 +88,11 @@ public class CrimeLab {
             }
         }
         return null;*/
+    }
+
+    public File getPhotoFile(Crime crime) {
+        File filesDir = mContext.getFilesDir();
+        return new File(filesDir, crime.getPhotoFilename());
     }
 
     public void updateCrime(Crime crime) {
