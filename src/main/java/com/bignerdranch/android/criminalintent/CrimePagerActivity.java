@@ -19,7 +19,7 @@ import java.util.UUID;
 /**
  * 该页面是一个viewpager多页面显示框架
  */
-public class CrimePagerActivity extends AppCompatActivity {
+public class CrimePagerActivity extends AppCompatActivity implements CrimeFragment.Callbacks{
     private static final String EXTRA_CRIME_ID = "com.bignerdranch.android.criminalintent.crime_id";
     private ViewPager mViewPager;
     private List<Crime> mCrimes;
@@ -66,5 +66,10 @@ public class CrimePagerActivity extends AppCompatActivity {
 
     private void initView() {
         mViewPager = findViewById(R.id.crime_view_pager);
+    }
+
+    @Override
+    public void onCrimeUpdated(Crime crime) {
+
     }
 }
