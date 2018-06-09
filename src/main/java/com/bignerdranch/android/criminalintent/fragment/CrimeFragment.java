@@ -32,6 +32,7 @@ import android.widget.ImageView;
 import com.bignerdranch.android.criminalintent.R;
 import com.bignerdranch.android.criminalintent.bean.Crime;
 import com.bignerdranch.android.criminalintent.data.CrimeLab;
+import com.bignerdranch.android.criminalintent.utils.DateUtils;
 import com.bignerdranch.android.criminalintent.utils.PictureUtils;
 
 import java.io.File;
@@ -264,7 +265,8 @@ public class CrimeFragment extends Fragment {
     }
 
     private void updateDate() {
-        mDateButton.setText(mCrime.getDate().toString());
+        //mDateButton.setText(mCrime.getDate().toString());
+        mDateButton.setText(DateUtils.date2String(mCrime.getDate()));
     }
 
     private String getCrimeReport() {

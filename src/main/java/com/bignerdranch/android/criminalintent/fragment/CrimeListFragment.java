@@ -23,6 +23,7 @@ import com.bignerdranch.android.criminalintent.CrimePagerActivity;
 import com.bignerdranch.android.criminalintent.R;
 import com.bignerdranch.android.criminalintent.bean.Crime;
 import com.bignerdranch.android.criminalintent.data.CrimeLab;
+import com.bignerdranch.android.criminalintent.utils.DateUtils;
 
 import java.util.List;
 
@@ -178,7 +179,8 @@ public class CrimeListFragment extends Fragment {
         public void bind(Crime crime) {
             mCrime = crime;
             mTitleTextView.setText(mCrime.getTitle());
-            mDateTextView.setText(mCrime.getDate().toString());
+            //mDateTextView.setText(mCrime.getDate().toString());
+            mDateTextView.setText(DateUtils.date2String(mCrime.getDate()));
             mSolvedImageView.setVisibility(crime.isSolved() ? View.VISIBLE : View.GONE);
         }
 
